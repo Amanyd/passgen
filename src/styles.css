@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+.selector::-moz-range-thumb{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border: 3px solid white;
+
+}
+.pop{
+    opacity:0;
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+    transform-origin: bottom;;
+    
+}
+.pop.active{
+    opacity:1;
+    transform: scale(1);
+}
+
+/* .selector:focus{
+    outline: 2px solid white;
+} */

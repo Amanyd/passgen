@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-zinc-900 to-zinc-800 justify-center flex">
+    <div class="container text-white flex flex-col h-[100vh] gap-10 justify-center items-center bg-gradient-to-br from-zinc-900 to-zinc-800">
+        <h1 class="text-white font-mullish text-3xl font-extrabold">Password Generator</h1>
+        <div class="display-container bg-black  flex p-6 rounded-4xl">
+            <input readonly placeholder="Password" class="display" passworddisplay>
+
+            <button class="flex relative">
+                <span class="pop absolute bottom-7 left-1 text-black rounded-2xl pl-1.5 pr-1.5 text-[15px] font-bold bg-white" copymessage></span>
+                <img class="cursor-pointer" copybutton src="circle.png" width="25" height="25" alt="">
+            </button>
+        </div>
+        <div class="input-container flex flex-col gap-3 bg-black p-6 rounded-4xl">
+            <div class="length-container font-bold flex justify-between">
+                <p>Password length</p>
+                <p datalength>0</p>
+            </div>
+            <input class="selector z-0 border-[3.4px] bg-white appearance-none w-100% rounded-4xl h-[0.6rem]" lengthslider type="range" min="1" max="20" class="slider">
+
+            <div class="text-[14px] flex items-center gap-2 font-bold">
+                <input class="bg-white checked:bg-black appearance-none w-[16px] h-[16px] cursor-pointer rounded-full border-[1px] border-white" type="checkbox" id="uppercase" >
+                <label class="cursor-pointer" for="uppercase">Include uppercase letters</label>
+            </div>
+            <div class="text-[14px] flex items-center gap-2 font-bold">
+                <input class="bg-white checked:bg-black appearance-none w-[16px] h-[16px] cursor-pointer rounded-full border-[1px] border-white" type="checkbox" id="lowercase" >
+                <label class="cursor-pointer" for="lowercase">Include lowercase letters</label>
+            </div>
+            <div class="text-[14px] flex items-center gap-2 font-bold">
+                <input class="bg-white checked:bg-black appearance-none w-[16px] h-[16px] cursor-pointer rounded-full border-[1px] border-white" type="checkbox" id="symbols" >
+                <label class="cursor-pointer" for="symbols">Include symbols</label>
+            </div>
+            <div class="text-[14px] flex items-center gap-2 font-bold">
+                <input class="bg-white checked:bg-black appearance-none w-[16px] h-[16px] cursor-pointer rounded-full border-[1px] border-white" type="checkbox" id="numbers" >
+                <label class="cursor-pointer" for="numbers">Include numbers</label>
+            </div>
+
+            <div class="strengthcontainer font-bold flex items-center justify-between">
+                <p>Strength</p>
+                <div dataindicator class="rounded-full bg-white w-5 h-5"></div>
+            </div>
+
+            <button generate class="p-3 rounded-4xl cursor-pointer  font-extrabold text-white hover:bg-white hover:text-black transition-all duration-300">Generate Password</button>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
