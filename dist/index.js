@@ -183,7 +183,7 @@ generateBtn.addEventListener("click", () => {
     setTimeout(() => {
         generateBtn.style.backgroundColor = "";  // Reset to original background color
         generateBtn.style.color = "";  // Reset to original text color
-    }, 100);
+    }, 140);
 
 
 
