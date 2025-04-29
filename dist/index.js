@@ -10,6 +10,7 @@ const symbolCheck = document.querySelector("#symbols");
 const generateBtn = document.querySelector("[generate]");
 const indicator = document.querySelector("[dataindicator]");
 const allCheckBox=document.querySelectorAll("input[type=checkbox]");
+const blow = document.querySelector(".blow");
 const symbols = "!@#$%^&*()_+{}[]:;<>?,./";
 let password = "";
 let passwordLength = 10;
@@ -113,6 +114,7 @@ async function copyContent(){
     
 }
 
+
 inputSlider.addEventListener("input", (e) => {
     passwordLength = e.target.value;
     handleSlider();
@@ -165,6 +167,25 @@ generateBtn.addEventListener("click", () => {
     password= shufflePassword(Array.from(password));
     passwordDisplay.value = password;
     calcStrength();
+    blow.classList.add("blow-shadow");
+
+    blow.classList.remove("blow-shadow");
+    void blow.offsetWidth;  // This forces a reflow to reset the animation
+    blow.classList.add("blow-shadow");
+
+    setTimeout(() => {
+        blow.classList.remove("blow-shadow");
+    }, 1000);
+    generateBtn.style.backgroundColor = "white";  // Simulate hover background color
+    generateBtn.style.color = "black";  // Simulate hover text color
+
+    // Reset the hover styles after a short delay
+    setTimeout(() => {
+        generateBtn.style.backgroundColor = "";  // Reset to original background color
+        generateBtn.style.color = "";  // Reset to original text color
+    }, 200);
+
+
 
 
 });

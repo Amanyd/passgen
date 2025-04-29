@@ -23,10 +23,19 @@
     opacity:1;
     transform: scale(1);
 }
+.blow-shadow {
+    box-shadow: 0 0 80px 60px rgba(255, 255, 255, 1);  /* Initial spread of the shadow */
+    animation: boomShrink 1s ease-out forwards;  /* Shrinks and fades out */
+}
 
-/* .selector:focus{
-    outline: 2px solid white;
-} */
+@keyframes boomShrink {
+    0% {
+        box-shadow: 0 0 50px 30px rgba(255, 255, 255, 1);  /* Fully spread shadow */
+    }
+    100% {
+        box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0);  /* Shrinks and disappears */
+    }
+}
 
 .selector::-webkit-slider-thumb{
     appearance: none;
